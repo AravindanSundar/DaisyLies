@@ -41,25 +41,26 @@ phases:
     commands:
       # install dependencies
       - whoami
+      - echo $SHELL
       # - npm install
-      - cd android
+      # - cd android
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
-      - touch local.properties
-      - pwd
-      - ls
-      - echo $ANDROID_SDK_ROOT
+      # - touch local.properties
+      # - pwd
+      # - ls
+      # - echo $ANDROID_SDK_ROOT
       # - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
       # - cat local.properties
-  build:
-    commands:
-      # build
-      - chmod +x gradlew
-      # - ./gradlew clean
-      # - ./gradlew assembleDebug
-  post_build:
-    commands:
-      - echo Build completed!
+  # build:
+  #   commands:
+  #     # build
+  #     - chmod +x gradlew
+  #     # - ./gradlew clean
+  #     # - ./gradlew assembleDebug
+  # post_build:
+  #   commands:
+  #     - echo Build completed!
 # artifacts:
 #   files:
 #     - /app/build/outputs/apk/release/*.apk
