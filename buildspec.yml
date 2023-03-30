@@ -40,8 +40,9 @@ phases:
   pre_build:
     commands:
       # install dependencies
-      # - whoami
-      - echo $USER
+      - whoami
+      # - echo $USER
+      - cd /home/root/Android/
       - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
       # - npm install
