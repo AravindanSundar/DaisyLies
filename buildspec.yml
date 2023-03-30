@@ -40,19 +40,21 @@ phases:
   pre_build:
     commands:
       # install dependencies
-      - npm install
-      - cd android
-      - touch local.properties
-  build:
-    commands:
-      # build
-      - chmod +x gradlew
-      - ./gradlew clean
-      - ./gradlew assembleDebug
-  post_build:
-    commands:
-      - echo Build completed!
-artifacts:
-  files:
-    - /app/build/outputs/apk/release/*.apk
-  discard-paths: yes
+      - whoami
+#       - npm install
+#       - cd android
+#       - touch local.properties
+#       - echo "sdk.dir=/home/USERNAME/Android/Sdk" > local.properties
+#   build:
+#     commands:
+#       # build
+#       - chmod +x gradlew
+#       - ./gradlew clean
+#       - ./gradlew assembleDebug
+#   post_build:
+#     commands:
+#       - echo Build completed!
+# artifacts:
+#   files:
+#     - /app/build/outputs/apk/release/*.apk
+#   discard-paths: yes
