@@ -59,7 +59,7 @@ phases:
   #     - ls
   build:
     commands:
-      build
+      # build
       - chmod +x gradlew
       - ./gradlew clean
       - ./gradlew assembleDebug
