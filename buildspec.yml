@@ -46,7 +46,7 @@ phases:
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
       # - touch local.properties
-      # - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
+      - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
       # - cat local.properties
   build:
     commands:
