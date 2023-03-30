@@ -46,18 +46,22 @@ phases:
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
       # - touch local.properties
-      - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
-      - cat local.properties
+      - pwd
+      - echo ~
+      - echo $HOME
+      - echo /home/$USER
+      # - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
+      # - cat local.properties
   build:
     commands:
       # build
       - chmod +x gradlew
       - ./gradlew clean
-      - ./gradlew assembleDebug
+      # - ./gradlew assembleDebug
   post_build:
     commands:
       - echo Build completed!
 artifacts:
   files:
     - /app/build/outputs/apk/release/*.apk
-  discard-paths: yes
+  # discard-paths: yes
