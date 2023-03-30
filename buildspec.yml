@@ -43,7 +43,7 @@ phases:
       - whoami
       # - echo $USER
       - cd /codebuild
-      - cd ../../home/root
+      - cd ../../home
       - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
       # - npm install
