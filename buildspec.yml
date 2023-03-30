@@ -42,7 +42,7 @@ phases:
       # install dependencies
       - whoami
       # - echo $USER
-      - cd /home/root/Android/
+      - cd /codebuild
       - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
       # - npm install
