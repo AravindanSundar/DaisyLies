@@ -43,7 +43,7 @@ phases:
       - whoami
       - echo $SHELL
       - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
-      # - npm install
+      - npm install
       - cd android
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
@@ -53,16 +53,16 @@ phases:
       - echo $ANDROID_SDK_ROOT
       - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
       # - cat local.properties
-  # build:
-  #   commands:
-  #     # build
-  #     - chmod +x gradlew
-  #     # - ./gradlew clean
-  #     # - ./gradlew assembleDebug
-  # post_build:
-  #   commands:
-  #     - echo Build completed!
-# artifacts:
-#   files:
-#     - /app/build/outputs/apk/release/*.apk
+  build:
+    commands:
+      # build
+      - chmod +x gradlew
+      # - ./gradlew clean
+      # - ./gradlew assembleDebug
+  post_build:
+    commands:
+      - echo Build completed!
+artifacts:
+  files:
+    - /app/build/outputs/apk/release/*.apk
   # discard-paths: yes
