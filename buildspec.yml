@@ -43,21 +43,21 @@ phases:
       - whoami
       - npm install
       - cd android
-      - find /root -name "sdk" -type d
-      - find /root -iname "sdk" -type d
-      - touch local.properties
-      - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
-      - cat local.properties
-#   build:
-#     commands:
-#       # build
-#       - chmod +x gradlew
-#       - ./gradlew clean
-#       - ./gradlew assembleDebug
-#   post_build:
-#     commands:
-#       - echo Build completed!
-# artifacts:
-#   files:
-#     - /app/build/outputs/apk/release/*.apk
-  # discard-paths: yes
+      # - find /root -name "sdk" -type d
+      # - find /root -iname "sdk" -type d
+      # - touch local.properties
+      # - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
+      # - cat local.properties
+  build:
+    commands:
+      # build
+      - chmod +x gradlew
+      - ./gradlew clean
+      - ./gradlew assembleDebug
+  post_build:
+    commands:
+      - echo Build completed!
+artifacts:
+  files:
+    - /app/build/outputs/apk/release/*.apk
+  discard-paths: yes
