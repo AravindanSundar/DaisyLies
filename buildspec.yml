@@ -42,12 +42,13 @@ phases:
       # install dependencies
       - npm install
       - cd android
+      - touch local.properties
   build:
     commands:
       # build
       - chmod +x gradlew
       - ./gradlew clean
-      - ./gradlew assembleDebug -x bundleReleaseJsAndAssets
+      - ./gradlew assembleDebug
   post_build:
     commands:
       - echo Build completed!
