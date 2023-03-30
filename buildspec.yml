@@ -43,8 +43,8 @@ phases:
       - whoami
       - npm install
       - cd android
-      - find /user -name "sdk" -type d
-      - find /user -iname "sdk" -type d
+      - find /root -name "sdk" -type d
+      - find /root -iname "sdk" -type d
       - touch local.properties
       - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
       - cat local.properties
