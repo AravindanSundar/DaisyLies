@@ -42,12 +42,12 @@ phases:
       # install dependencies
       - whoami
       # - echo $USER
-      - cd /codebuild
-      - cd ../../home
-      - ls
+      # - cd /codebuild
+      # - cd ../../home
+      # - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
-      # - npm install
-      # - cd android
+      - npm install
+      - cd android
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
       # - touch local.properties
@@ -57,16 +57,16 @@ phases:
   #     - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
   #     - cat local.properties
   #     - ls
-  # build:
-  #   commands:
-      # build
-      # - chmod +x gradlew
-      # - ./gradlew clean
-      # - ./gradlew assembleDebug
-#   post_build:
-#     commands:
-#       - echo Build completed!
-# artifacts:
-#   files:
-#     - /app/build/outputs/apk/release/*.apk
-  # discard-paths: yes
+  build:
+    commands:
+      build
+      - chmod +x gradlew
+      - ./gradlew clean
+      - ./gradlew assembleDebug
+  post_build:
+    commands:
+      - echo Build completed!
+artifacts:
+  files:
+    - /app/build/outputs/apk/release/*.apk
+  discard-paths: yes
