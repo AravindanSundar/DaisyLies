@@ -45,7 +45,7 @@ phases:
       - cd android
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
-      # - touch local.properties
+      - touch local.properties
       - pwd
       - ls
       # - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
