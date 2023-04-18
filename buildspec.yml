@@ -68,5 +68,6 @@ phases:
       - echo Build completed!
 artifacts:
   files:
-    - './android/app/build/outputs/**/*.apk'
+    - './android/app/build/outputs/**/*'
+  name: OutputFile
   discard-paths: yes
