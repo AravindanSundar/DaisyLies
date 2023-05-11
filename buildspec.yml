@@ -36,7 +36,7 @@ phases:
     commands:
       # install Node
       - curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
-      - yum install -y nodejs
+      - yum install nodejs
   pre_build:
     commands:
       # install dependencies
@@ -47,6 +47,7 @@ phases:
       # - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
       - npm install
+      - npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets
       - cd android
       # - find /root -name "sdk" -type d
       # - find /root -iname "sdk" -type d
