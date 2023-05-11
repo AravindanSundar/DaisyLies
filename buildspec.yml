@@ -46,27 +46,28 @@ phases:
       # - cd ../../home
       # - ls
       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
-      - npm install
-      - npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets
-      - cd android
-      # - find /root -name "sdk" -type d
-      # - find /root -iname "sdk" -type d
-      # - touch local.properties
-      # - pwd
-      # - ls
-  #     - echo $ANDROID_SDK_ROOT
-  #     - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
-  #     - cat local.properties
-  #     - ls
-  build:
-    commands:
-      # build
-      - chmod +x gradlew
-      - ./gradlew clean
-      - ./gradlew assembleRelease
-  post_build:
-    commands:
-      - echo Build completed!
-artifacts:
-  files:
-    - './android/app/build/outputs/**/*'
+        - java -version
+#       - npm install
+#       - npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets
+#       - cd android
+#       # - find /root -name "sdk" -type d
+#       # - find /root -iname "sdk" -type d
+#       # - touch local.properties
+#       # - pwd
+#       # - ls
+#   #     - echo $ANDROID_SDK_ROOT
+#   #     - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
+#   #     - cat local.properties
+#   #     - ls
+#   build:
+#     commands:
+#       # build
+#       - chmod +x gradlew
+#       - ./gradlew clean
+#       - ./gradlew assembleRelease
+#   post_build:
+#     commands:
+#       - echo Build completed!
+# artifacts:
+#   files:
+#     - './android/app/build/outputs/**/*'
