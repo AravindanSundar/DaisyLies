@@ -60,7 +60,6 @@ phases:
   build:
     commands:
       # build
-      - chmod +x gradlew
       - ./gradlew clean
       - ./gradlew assembleRelease
   post_build:
