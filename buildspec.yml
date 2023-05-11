@@ -66,7 +66,6 @@ phases:
   post_build:
     commands:
       - echo Build completed!
-  artifacts:
-    files:
-      - './android/app/build/outputs/**/*'
-    name: OutputFile
+artifacts:
+  files:
+    - './android/app/build/outputs/**/*'
