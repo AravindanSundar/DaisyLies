@@ -3,8 +3,7 @@ phases:
   install:
     runtime-versions:    # Install required environments
       java: corretto17
-      android: latest
-      nodejs: latest
+      nodejs: 12.22.4
     commands:            # Install react native cli and node modules
       - npm install
   pre_build:
