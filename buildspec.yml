@@ -36,11 +36,14 @@ phases:
     commands:
       # install Node
       - curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
-      - apt install -y nodejs
+      - yum install -y nodejs
   pre_build:
     commands:
       # install dependencies
       - whoami
+      - wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2020.3.1.23/android-studio-2020.3.1.23-linux.tar.gz
+      - tar -xf android-studio-2020.3.1.23-linux.tar.gz
+      - export PATH=$PATH:/path/to/android-studio/bin
       # - echo $USER
       # - cd /codebuild
       # - cd ../../home
