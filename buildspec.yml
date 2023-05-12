@@ -1,72 +1,69 @@
-# version: 0.2
-# phases:
-#   install:
-#     runtime-versions:    # Install required environments
-#       java: corretto17
-#       android: latest
-#       nodejs: latest
-#     commands:            # Install react native cli and node modules
-#       - npm install
-#   pre_build:
-#     commands:            # Run pre-build process (linking)
-#       - echo Pre Build started on `date`
-#       - react-native link
-#       - cd android
-#   build:
-#     commands:            # Build and cleanup
-#       - echo Build started on `date`
-#       - chmod +x gradlew
-#       - ./gradlew clean
-#       - ./gradlew assembleDebug
-#   post_build:
-#     commands:
-#       - echo Build completed on `date`
-# cache:
-#   paths:
-#     - app/node_modules/**/*
-# artifacts:
-#   files:
-#     - app/android/app/build/outputs/apk/release/*.apk
-#   discard-paths: yes
-
 version: 0.2
-
 phases:
   install:
-    commands:
-      # install Node
-      - curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
-      - yum install -y nodejs
-  pre_build:
-    commands:
-      # install dependencies
-      - whoami
-      # - echo $USER
-      # - cd /codebuild
-      # - cd ../../home
-      # - ls
-      # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
+    runtime-versions:    # Install required environments
+      java: corretto17
+      android: latest
+      nodejs: latest
+    commands:            # Install react native cli and node modules
       - npm install
+  pre_build:
+    commands:            # Run pre-build process (linking)
+      - echo Pre Build started on `date`
+      - react-native link
       - cd android
-      # - find /root -name "sdk" -type d
-      # - find /root -iname "sdk" -type d
-      # - touch local.properties
-      # - pwd
-      # - ls
-  #     - echo $ANDROID_SDK_ROOT
-  #     - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
-  #     - cat local.properties
-  #     - ls
   build:
-    commands:
-      # build
+    commands:            # Build and cleanup
+      - echo Build started on `date`
       - chmod +x gradlew
       - ./gradlew clean
-      - ./gradlew assembleRelease
+      - ./gradlew assembleDebug
   post_build:
     commands:
-      - echo Build completed!
+      - echo Build completed on `date`
 artifacts:
   files:
-    - './android/app/build/outputs/**/*'
-  name: OutputFile
+    - ./android/app/build/outputs/**/*
+  discard-paths: yes
+
+# version: 0.2
+
+# phases:
+#   install:
+#     commands:
+#       # install Node
+#       - curl -sL https://deb.nodesource.com/setup_12.x | bash - &&\
+#       - yum install -y nodejs
+#   pre_build:
+#     commands:
+#       # install dependencies
+#       - whoami
+#       # - echo $USER
+#       # - cd /codebuild
+#       # - cd ../../home
+#       # - ls
+#       # - export ANDROID_SDK_ROOT=/home/root/Android/Sdk
+#       - npm install
+#       - cd android
+#       # - find /root -name "sdk" -type d
+#       # - find /root -iname "sdk" -type d
+#       # - touch local.properties
+#       # - pwd
+#       # - ls
+#   #     - echo $ANDROID_SDK_ROOT
+#   #     - echo "sdk.dir=/home/root/Android/Sdk" > local.properties
+#   #     - cat local.properties
+#   #     - ls
+#   build:
+#     commands:
+#       # build
+#       - chmod +x gradlew
+#       - ./gradlew clean
+#       - ./gradlew assembleRelease
+#   post_build:
+#     commands:
+#       - echo Build completed!
+# artifacts:
+#   files:
+#     - './android/app/build/outputs/**/*'
+#   name: OutputFile
